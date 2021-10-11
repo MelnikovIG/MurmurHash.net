@@ -1,3 +1,5 @@
+using System;
+
 namespace MurmurHash
 {
 	public class MurmurHash2
@@ -10,7 +12,7 @@ namespace MurmurHash
 			return Hash(System.Text.Encoding.UTF8.GetBytes(data));
 		}
 
-		public static uint Hash(byte[] data, uint seed = 0xc58f1a7a)
+		public static uint Hash(Span<byte> data, uint seed = 0xc58f1a7a)
 		{
 			int length = data.Length;
 			if (length == 0)
